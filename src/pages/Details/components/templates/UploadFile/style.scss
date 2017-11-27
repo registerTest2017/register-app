@@ -1,0 +1,45 @@
+.uploadFile {
+    position: relative;
+    display: inline-block;
+    padding-right: 40px;
+    height: 35px;
+    line-height: 35px;
+    & > input[type=file] {
+        display: none;
+    }
+    & > span {
+        display: block;
+        padding: 0 5px;
+        width: 200px;
+        height: 30px;
+        outline: none;
+        overflow: hidden;
+        border: 1px solid #bbb;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        line-height: 30px;
+        text-overflow: ellipsis;
+        text-align: right;
+        white-space: nowrap;
+        & > i {
+            display: inline-block;
+            font-style: normal;
+        }
+    }
+    & > button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 36px;
+        height: 30px;
+        outline: none;
+        border: 1px solid #bbb;
+        background: #fefefe;
+    }
+    & > button:hover {
+        background: #eee;
+    }
+    & > button:active {
+        background: #cecdcd;
+    }
+}

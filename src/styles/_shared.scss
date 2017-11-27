@@ -1,0 +1,539 @@
+
+// Create mixin media query
+@mixin mediaQuery($minWidth, $maxWidth, $type: min) {
+    $minWidth: map_get($breakpoints, $minWidth);
+    $maxWidth: map_get($breakpoints, $maxWidth);
+
+    // Max-width media query
+    @if $type == max {
+        @media only screen and (max-width: #{$maxWidth}) {
+            @content;
+        }
+    }
+
+    // Min-width and Max-width media query
+    @else if $type == between {
+        @media only screen and (min-width: #{$minWidth} + 1) and (max-width: #{$maxWidth}) {
+            @content;
+        }
+    }
+
+    @else {
+        // Min-width media query
+        @media only screen and (min-width: #{$minWidth} + 1) {
+            @content;
+        }
+    }
+
+}
+
+@mixin clearfix {
+    zoom: 1;
+    &::after {
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        font-size: 0;
+        content: ".";
+    }
+}
+
+/* shared function */
+@function px-to-rem($px) {
+    @return $px / $font-size-default * 1rem;
+}
+
+/* shared error msg */
+@mixin errorMsg {
+    border: 1px solid $dark-red;
+    background-color: $pink-white-10;
+    box-shadow: 0 0 1px $pink-white-10;
+}
+
+/* shared style */
+%pageContainer {
+    display: block;
+    margin: 50px 30px;
+
+    @include mediaQuery("", "tablet-small", max) {
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+
+    @include mediaQuery("", "handset", max) {
+        margin: 0;
+    }
+}
+
+%pageHeadTitle {
+    font-size: px-to-rem(38px);
+    font-weight: 300;
+
+    @include mediaQuery("", "tablet-large", max) {
+        font-size: px-to-rem(32px);
+    }
+}
+
+%pageHeadSubtitle {
+    font-size: px-to-rem(28px);
+    font-weight: 300;
+
+    @include mediaQuery("", "tablet-large", max) {
+        font-size: px-to-rem(25px);
+    }
+}
+
+%itemTitle {
+    font-size: px-to-rem(22px);
+    font-weight: 300;
+
+    @include mediaQuery("", "tablet-large", max) {
+        font-size: px-to-rem(20px);
+    }
+}
+
+%fhcContentPadding {
+    padding-left: 35px;
+    padding-right: 35px;
+
+    @include mediaQuery("", "tablet-small", max) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @include mediaQuery("", "handset", max) {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+}
+
+%buttonDefault {
+    font-family: $font;
+    font-weight: normal;
+    font-size: px-to-rem(16px);
+}
+
+%buttonPrimaryRedStyle {
+    border: 1px $primary-red solid;
+    color: $white;
+    background-color: $primary-red;
+}
+
+%buttonSolidStyle {
+    border: 1px $pewter solid;
+    color: $white;
+    background-color: transparent;
+}
+
+%buttonJadeStyle {
+    border: 1px $jade solid;
+    color: $white;
+    background-color: $jade;
+}
+
+%buttonLightSlateStyle {
+    border: 1px $light-slate solid;
+    color: $white;
+    background-color: $light-slate;
+}
+
+%titleHighlight {
+    position: relative;
+    &::before {
+        position: absolute;
+        top: 2px;
+        bottom: 4px;
+        left: 0;
+        width: 5px;
+        content: "";
+        background-color: $primary-red;
+    }
+}
+
+%tooltip {
+    .tooltip {
+        .tooltipContent {
+            padding: 15px 10px;
+            border: 1px solid $pewter;
+            background-color: $silver;
+        }
+        &.placeLeft {
+            padding-right: 15px;
+            &::before {
+                right: 6px;
+                border-right-width: 0;
+                border-left-color: $silver;
+            }
+        }
+        &.placeTop {
+            padding-bottom: 15px;
+            &::before {
+                bottom: 6px;
+                border-bottom-width: 0;
+                border-top-color: $silver;
+            }
+        }
+        &.placeBottom {
+            padding-top: 15px;
+            &::before {
+                top: 6px;
+                border-top-width: 0;
+                border-bottom-color: $silver;
+            }
+        }
+
+        &.placeRight {
+            padding-left: 15px;
+            &::before {
+                left: 6px;
+                border-left-width: 0;
+                border-right-color: $silver;
+            }
+        }
+    }
+}
+
+%customRadioButtonInput {
+    input[type="radio"] {
+        + .radioChecked {
+            margin: 6px;
+            width: 15px;
+            height: 15px;
+            min-width: 15px;
+            min-height: 15px;
+
+            @include mediaQuery("", "handset", max) {
+                width: 12px;
+                height: 12px;
+                min-width: 12px;
+                min-height: 12px;
+            }
+        }
+        &:checked {
+            + .radioChecked {
+                background-color: $jade;
+            }
+        }
+    }
+}
+
+//custom radioButton
+%customRadioButton {
+    .radioButtonLabel {
+        position: relative;
+
+        .customRadioButton {
+            float: left;
+            border: 1px solid $silver;
+            background-color: $white;
+        }
+
+        @extend %customRadioButtonInput;
+
+        .labelText {
+            display: block;
+            overflow: hidden;
+            font-size: px-to-rem(24px);
+            line-height: 1.2;
+            font-weight: 300;
+        }
+    }
+}
+
+//custom checkbox
+%customCheckbox {
+    .checkboxLabel {
+        position: relative;
+        display: block;
+        padding-left: 40px;
+
+        @include mediaQuery("", "handset", max) {
+            padding-left: 30px;
+        }
+
+        .customCheckbox {
+            position: absolute;
+            left: 2px;
+            top: 0;
+            width: 22px;
+            height: 22px;
+            border: 1px solid $silver;
+            background: $white;
+
+            @include mediaQuery("", "handset", max) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .icon {
+            margin-left: -3px;
+            margin-top: -3px;
+            color: $jade;
+            font-size: px-to-rem(28px);
+            font-weight: normal;
+
+            @include mediaQuery("", "handset", max) {
+                margin-left: -1px;
+                margin-top: -1px;
+                font-size: px-to-rem(22px);
+            }
+        }
+
+        .labelText {
+            font-size: px-to-rem(24px);
+            font-weight: 100;
+        }
+    }
+}
+
+%arrowBackButton {
+    .btnBack {
+        display: inline-block;
+        padding: 15px 25px;
+        border: 0;
+        color: $font-color-default;
+        background-color: transparent;
+        appearance: none;
+
+        > .icon {
+            margin-right: 5px;
+            font-size: px-to-rem(18px);
+            vertical-align: text-bottom;
+        }
+        > span {
+            display: inline-block;
+            font-size: px-to-rem(16px);
+            font-weight: normal;
+        }
+
+        & + .button {
+            margin-left: 25px;
+        }
+    }
+}
+
+@mixin fixedFooter-mobile {
+    @include mediaQuery("", "handset", max) {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 20px 15px;
+        background-color: $white;
+        .button {
+            width: 100%;
+        }
+    }
+}
+
+%yesNoButton {
+    display: inline-block;
+
+    @extend %customRadioButton;
+
+    .radioButtonLabel {
+        display: inline-block;
+        margin-right: 55px;
+
+        @include mediaQuery("", "handset", max) {
+            margin-right: 40px;
+        }
+
+        .labelText {
+            font-size: px-to-rem(16px);
+            line-height: 28px;
+            font-weight: normal;
+        }
+
+        .customRadioButton {
+            margin-right: 15px;
+
+            @include mediaQuery("", "handset", max) {
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+body {
+    .icon {
+        vertical-align: bottom;
+        text-decoration: none;
+    }
+    a.button {
+        box-sizing: border-box;
+        text-align: center;
+        text-decoration: none;
+        > .buttonText {
+            @extend %buttonDefault;
+        }
+    }
+    .button {
+        display: inline-block;
+        padding: 13px 25px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .buttonSolid {
+        .button,
+        &.button {
+            @extend %buttonSolidStyle;
+        }
+    }
+
+    .buttonLightSlate {
+        .button,
+        &.button {
+            @extend %buttonLightSlateStyle;
+        }
+    }
+
+    .buttonPrimaryRed {
+        .button,
+        &.button {
+            @extend %buttonPrimaryRedStyle;
+        }
+    }
+
+    .buttonJade {
+        .button,
+        &.button {
+            @extend %buttonJadeStyle;
+        }
+    }
+
+    .buttonIcon {
+        .icon {
+            margin-left: 10px;
+            margin-bottom: -2px;
+            margin-top: -5px;
+            font-size: px-to-rem(26px);
+        }
+    }
+
+    .input {
+        box-sizing: border-box;
+        width: 100%;
+        border: 1px solid $pewter;
+        border-radius: 0;
+        font-size: px-to-rem(16px);
+        font-weight: normal;
+        background: $white;
+    }
+
+    .textarea {
+        box-sizing: border-box;
+        border: 1px solid $silver;
+        border-radius: 0;
+        background: $white;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        &.input {
+            padding: 0;
+        }
+    }
+
+    .popup {
+        z-index: 999;
+        color: $font-color-default;
+        .closeButton {
+            .icon {
+                margin-top: -6px;
+                font-size: px-to-rem(26px);
+            }
+        }
+        .popupContentSection,
+        .popupFooter {
+            margin: 20px;
+        }
+
+        .popupHeader {
+            margin: 20px 20px 25px;
+            h1 {
+                font-size: px-to-rem(38px);
+                font-weight: 300;
+            }
+        }
+        .popupFooter {
+            text-align: right;
+            .btnReset {
+                display: inline-block;
+                .button {
+                    border: 0;
+                    font-size: px-to-rem(16px);
+                    font-weight: normal;
+                    color: $font-color-default;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        @include mediaQuery("", "handset", max) {
+            .popupHeader,
+            .popupContentSection,
+            .popupFooter {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .popupContentContainer {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .notification {
+        .contentBlock {
+            color: $font-color-default;
+            p {
+                font-size: px-to-rem(16px);
+                font-weight: normal;
+            }
+        }
+    }
+
+    .hr {
+        border-top: 1px $pewter-white-20 solid;
+    }
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.mobileContent {
+    display: none;
+
+    @include mediaQuery("", "handset", max) {
+        display: block;
+    }
+}
+
+.tabletlargeContent {
+    display: none;
+
+    @include mediaQuery("", "tablet-large", max) {
+        display: block;
+    }
+}
+
+.cursorDefault {
+    cursor: default;
+}
+
+.range-errorMsg,
+.aboutmeChildrenAverageErrorMsg,
+.aboutmeEldestEnterErrorMsg {
+    div {
+        input[type=text] {
+            @include errorMsg;
+        }
+    }
+}

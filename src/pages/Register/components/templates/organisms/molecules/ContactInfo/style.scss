@@ -1,0 +1,30 @@
+@import "../../../../styles/Register.scss";
+
+.ContactInfoContainer {
+    padding: 5px;
+    li {
+        z-index: 1;
+        .Rows {
+            .columnsRight {
+                &.minInput {
+                    input {
+                        &.getTwoCode {
+                            width: 110px;
+                            border: none;
+                            color: $pearl;
+                            background: $slate;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .subscribeConfirm {
+        margin-top: 10px;
+        padding-left: 13%;
+
+        @include mediaQuery("", "handset", max) {
+            padding-left: 0;
+        }
+    }
+}

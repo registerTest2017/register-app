@@ -1,0 +1,509 @@
+@import "../../Register/components/styles/Register.scss";
+
+.detailsContainer {
+    // position: relative;
+    // z-index: 0;
+    display: block;
+    padding: 50px 2%;
+    margin: 10px calc((100% - 1120px) / 2) 30px calc((100% - 1120px) / 2);
+    min-height: 500px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: UniversNextforHSBC-light, Helvetica Neue, Helvetica, Arial, sans-serif;
+    background: #fff;
+    a {
+        color: $dark-sapphire;
+        text-decoration: none;
+    }
+    a:hover {
+        color: red;
+        text-decoration: underline;
+    }
+    // Title START*******************************************
+    .detailsTitle {
+        border: 0 solid #db0011;
+        border-left-width: 0.3125rem;
+        margin-bottom: 1.125rem;
+        padding-left: 1.25rem;
+        width: 100%;
+        overflow-wrap: break-word;
+        min-height: 2.1875rem;
+        word-wrap: break-word;
+        color: #333;
+        span {
+            font-size: 1.75rem;
+            font-weight: 400;
+        }
+    }
+    // tab groups START*******************************************
+    .tabPagesDescription {
+        width: 60%;
+        margin: 0 0 1.25rem;
+        line-height: 22px;
+        span {
+            font-size: 1.375rem;
+        }
+    }
+    .tabPagesContent {
+        width: 60%;
+        .tabPagesItem {
+            border: thin solid #d7d8d6;
+            border-radius: 2px;
+            padding: 0;
+            margin-bottom: 28px;
+            font-size: 1rem;
+            color: #333;
+            .tabPagesItemContent {
+                margin: 14px 14px 5px;
+                .mTitle {
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 1rem;
+                    span {
+                        font-weight: 400;
+                    }
+                    h3 {
+                        margin: 1rem 0 0;
+                        span {
+                            font-size: 1.125rem;
+                            font-weight: bold;
+                        }
+                    }
+                    p {
+                        margin: 0.5rem 0 0;
+                        span {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                .mContent {
+                    padding: 15px 0;
+                    ul {
+                        li {
+                            margin-bottom: 1.25rem;
+                            .liL {
+                                display: inline-block;
+                                width: 50%;
+                                color: #5c5c5c;
+                                font-size: 1rem;
+                            }
+                            &.uploadFile {
+                                .liL {
+                                    vertical-align: top;
+                                    line-height: 30px;
+                                }
+                            }
+                            .liR {
+                                display: inline-block;
+                                width: 50%;
+                                color: #333;
+                                font-size: 1.2rem;
+                                input,
+                                .dropdownContainer {
+                                    width: 180px;
+                                    box-sizing: border-box;
+                                    border-color: #bbb;
+                                    ul li {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                                input {
+                                    border: 1px solid #bbb;
+                                    padding: 6px 10px;
+                                    font-size: 16px;
+                                }
+                                .fontIcon {
+                                    span {
+                                        font-size: 2rem;
+                                    }
+                                    &.agree {
+                                        span {
+                                            color: green;
+                                        }
+                                    }
+                                    &.delete {
+                                        span {
+                                            color: red;
+                                        }
+                                    }
+                                    &.clock {
+                                        span {
+                                            color: red;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // SurveyInfo START===========
+            &.surveyItem {
+                input {
+                    box-sizing: border-box;
+                    width: 100%;
+                    padding: 5px 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 0;
+                    font-size: 1.14286rem;
+                    font-weight: normal;
+                    background: #fff;
+                }
+                .mContent {
+                    ul {
+                        li {
+                            position: relative;
+                            z-index: 0;
+                            li {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+                // dropdown START********
+                .dropdownContainer {
+                    z-index: 1;
+                    .dropdownBox {
+                        min-width: 135px;
+                    }
+                }
+                .dropdownContainer {
+                    .dropdownBox {
+                        z-index: 100;
+                        width: 100%;
+                        min-width: 160px;
+                        box-sizing: border-box;
+                        border-color: #ccc;
+                        background-color: $white;
+
+                        &.opened {
+                            .dropdownBoxDisplayValue {
+                                &::after {
+                                    content: "\F056";
+                                }
+                            }
+                        }
+
+                        .dropdownBoxDisplayValue {
+                            padding: 8px 10px;
+                            padding-right: 30px;
+                            font-size: px-to-rem(14px);
+                            color: $font-color-default;
+
+                            &::after {
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                margin-top: -10px;
+                                border: none;
+                                display: inline-block;
+                                width: 30px;
+                                height: 20px;
+                                font-size: px-to-rem(16px);
+                                font-family: "HSBCIcon-Font";
+                                font-smoothing: antialiased;
+                                font-style: normal;
+                                font-weight: normal;
+                                line-height: 20px;
+                                text-align: center;
+                                vertical-align: middle;
+                                content: "\F055";
+                                background-color: transparent;
+                                speak: none;
+                                text-rendering: auto;
+                            }
+                        }
+
+                        .dropdownBoxItemList {
+                            left: 0;
+                            right: 0;
+                        }
+
+                        .dropdownBoxItem {
+                            width: auto;
+                            padding: 8px 16px;
+                            font-size: px-to-rem(14px);
+                            color: $font-color-default;
+                            background-color: $white;
+                        }
+                        .dropdownBoxItem:hover {
+                            background-color: #e2e2e2;
+                        }
+                        .dropdownBoxItem.selected {
+                            color: $black;
+                            background-color: #e2e2e2;
+                        }
+                        .dropdownBoxItem.selected:hover {
+                            background-color: #e2e2e2;
+                        }
+
+                    }
+                }
+                // dropdown END********
+            }
+            // SurveyInfo END=============
+        }
+        .tabPagesItemLoadding {
+            width: 100%;
+            margin-top: 10px;
+            button {
+                width: 100%;
+                padding: 10px 0;
+                border: none;
+                font-size: 1.375rem;
+                text-align: center;
+                color: #6c6868;
+                cursor: pointer;
+                background: #d7d8d6;
+            }
+        }
+    }
+    .operations {
+        width: 60%;
+        overflow: hidden;
+        .backSearch {
+            float: left;
+            padding-top: 15px;
+            .backButton {
+                border: none;
+                font-size: 14px;
+                color: $dark-sapphire;
+                cursor: pointer;
+                background: none;
+            }
+            .backButton:hover {
+                color: red;
+                text-decoration: underline;
+            }
+        }
+        .operationsButton {
+            float: right;
+        }
+    }
+    .button {
+        border: 1px solid #bbb;
+        padding: 10px 25px;
+        margin: 0 0 0 20px;
+        outline: none;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        background: #666;
+        a {
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            color: #999;
+        }
+    }
+    .btnapprove {
+        color: #fff;
+        background: #13842a;
+        a {
+            color: #fff;
+        }
+    }
+    .btnworning {
+        color: #fff;
+        background: $primary-red;
+        a {
+            color: #fff;
+        }
+    }
+    .buttonDisabled {
+        color: #eee;
+        background: #888;
+        a {
+            color: #fff;
+        }
+    }
+    .submit {
+        width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        text-align: right;
+        .button {
+            width: 180px;
+            height: 50px;
+            color: #fff;
+            background: $light-slate;
+        }
+    }
+    // dropdown START********
+    .dropdownContainer {
+        .dropdownBox {
+            z-index: 1;
+            width: 100%;
+            min-width: 126px;
+            box-sizing: border-box;
+            border-color: #ccc;
+            background-color: $white;
+
+            &.opened {
+                .dropdownBoxDisplayValue {
+                    &::after {
+                        content: "\F056";
+                    }
+                }
+            }
+
+            .dropdownBoxDisplayValue {
+                padding: 8px 10px;
+                padding-right: 30px;
+                font-size: px-to-rem(16px);
+                color: $font-color-default;
+                ul li {
+                    margin-bottom: 0;
+                }
+
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -10px;
+                    border: none;
+                    display: inline-block;
+                    width: 30px;
+                    height: 20px;
+                    font-size: px-to-rem(16px);
+                    font-family: "HSBCIcon-Font";
+                    font-smoothing: antialiased;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 20px;
+                    text-align: center;
+                    vertical-align: middle;
+                    content: "\F055";
+                    background-color: transparent;
+                    speak: none;
+                    text-rendering: auto;
+                }
+            }
+
+            .dropdownBoxItemList {
+                left: 0;
+                right: 0;
+            }
+
+            .dropdownBoxItem {
+                width: auto;
+                padding: 8px 16px;
+                margin-bottom: 0;
+                font-size: px-to-rem(16px);
+                color: $font-color-default;
+                background-color: $white;
+            }
+            .dropdownBoxItem:hover {
+                background-color: #e2e2e2;
+            }
+            .dropdownBoxItem.selected {
+                color: $black;
+                background-color: #e2e2e2;
+            }
+            .dropdownBoxItem.selected:hover {
+                background-color: #e2e2e2;
+            }
+
+        }
+    }
+    // dropdown END********
+    .popup .popupContent {
+        padding-bottom: 15px;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+.tabPagesItemBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-shrink: 0;
+    width: 100%;
+    button {
+        width: auto;
+        border-radius: 0;
+        border: 1px solid #4d6474;
+        display: inline-block;
+        margin: 0.4375rem 0.625rem 1.3125rem 0;
+        overflow: hidden;
+        padding: 0.875rem 0.875rem 0.8125rem;
+        text-align: center;
+        touch-action: manipulation;
+        vertical-align: middle;
+        transition: background-color 0.1s;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+        background: #4d6474;
+        &.buttonOutline {
+            border-color: #333;
+            color: #333;
+            background-color: hsla(0, 0%, 100%, 0);
+        }
+    }
+    // tab groups END*******************************************
+}
+
+.tableContainer {
+    padding-top: 10px;
+    .detailsTable {
+        margin-top: 10px;
+        padding-bottom: 10px;
+        tr {
+            td {
+                padding: 6px 3px;
+                border-bottom: 1px solid #f8f8f8;
+                vertical-align: top;
+            }
+            img {
+                width: 150px;
+            }
+        }
+        thead {
+            tr {
+                td {
+                    padding: 10px 3px;
+                }
+                color: #fff;
+                background: #999;
+            }
+        }
+        &.dTop {
+            thead {
+                tr {
+                    td {
+                        padding: 8px 3px;
+                        font-weight: bold;
+                    }
+                    color: #333;
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
+
+.popUpSignature {
+    .signature {
+        img {
+            width: 100%;
+        }
+    }
+
+    .popup .closeButton .icon {
+        display: none;
+    }
+
+    .popup .popupContentContainer {
+        padding: 0;
+        height: 400px;
+    }
+
+    .detailsContainer .popup .popupContent {
+        padding-bottom: 0;
+    }
+}

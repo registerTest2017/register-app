@@ -1,0 +1,10 @@
+@import "../../../../styles/Register.scss";
+
+.ServiceFunctionContainer {
+    margin: 20px 40px;
+    width: 100%;
+
+    @include mediaQuery("", "handset", max) {
+        margin: 20px 5px;
+    }
+}

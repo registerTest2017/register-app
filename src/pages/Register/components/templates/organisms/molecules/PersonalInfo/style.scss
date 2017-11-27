@@ -1,0 +1,43 @@
+@import "../../../../styles/Register.scss";
+
+.PersonalInfoContainer {
+    padding: 5px;
+    li .Rows {
+        .address {
+            input {
+                &:first-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .yesNoButton {
+            display: block;
+        }
+        .PersonalTwoCols {
+            input {
+                &:first-child {
+                    width: 20%;
+                    display: inline-block;
+                }
+                &:last-child {
+                    width: 41%;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    li {
+        z-index: 1;
+    }
+    li.residentialAddress,
+    li.permanmentContry {
+        z-index: 2;
+    }
+
+    li.livingSituationLi {
+        z-index: 3;
+    }
+    li.educationLevel {
+        z-index: 4;
+    }
+}

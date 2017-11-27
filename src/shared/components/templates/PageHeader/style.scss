@@ -1,0 +1,129 @@
+@import "../../../../styles/_variable", "../../../../styles/shared";
+
+.HeaderContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: auto;
+
+    .LeftRightW {
+        padding: 0 calc((100% - 1120px) / 2);
+
+        @include mediaQuery("", "desktop-main", max) {
+            padding: 0 20px;
+        }
+    }
+    .HeaderTop {
+        height: 34px;
+        line-height: 34px;
+        background-color: $black;
+        .ulRight {
+            float: right;
+            a {
+                text-decoration: none;
+            }
+            span {
+                vertical-align: middle;
+                color: $white;
+                font-size: px-to-rem(14px);
+
+                &.txts {
+                    margin-left: 5px;
+                    font-size: px-to-rem(12px);
+                }
+            }
+        }
+    }
+}
+
+.headerMainH {
+    display: block;
+    height: 80px;
+    margin-top: 34px;
+}
+
+.HeaderMain {
+    height: 80px;
+    margin-top: 34px;
+    background-color: #f8f8f8;
+    & > div {
+        width: 1120px;
+        margin: 0 auto;
+    }
+    .HeaderMainLeft {
+        height: 100%;
+        float: left;
+        li {
+            float: left;
+            padding: 5px 20px;
+            border-right: 1px solid $silver;
+            &:last-child {
+                border-right: none;
+            }
+
+            @include mediaQuery("", "handset", max) {
+                padding: 5px 10px;
+            }
+        }
+        .logo {
+            width: 150px;
+            margin-top: 23px;
+            padding-right: 35px;
+            padding-left: 0;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            @include mediaQuery("", "desktop-main", max) {
+                width: 140px;
+                margin-left: 10px;
+            }
+
+            @include mediaQuery("", "handset", max) {
+                width: 120px;
+                margin-top: 25px;
+                margin-left: 10px;
+                padding-right: 20px;
+            }
+        }
+        .help {
+            .helpTitle {
+                margin-top: 15px;
+                p {
+                    padding: 2px 0;
+                    color: $graphite;
+
+                    &:nth-child(1) {
+                        text-indent: -3px;
+                        font-size: px-to-rem(20px);
+
+                        @include mediaQuery("", "handset", max) {
+                            font-size: px-to-rem(18px);
+                        }
+                    }
+                    &:nth-child(2) {
+                        font-size: px-to-rem(14px);
+
+                        @include mediaQuery("", "handset", max) {
+                            font-size: px-to-rem(12px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.HeaderShadow {
+    .HeaderMain {
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+        transition: all 0.6s ease;
+        box-shadow: 0 2px 6px rgba(10, 10, 10, 0.2);
+    }
+}

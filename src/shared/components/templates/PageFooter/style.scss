@@ -1,0 +1,64 @@
+@import "../../../../styles/_variable", "../../../../styles/shared";
+
+.FooterContainer {
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    padding: 10px 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    line-height: 22px;
+    background-color: $black;
+    .LeftRightW {
+        padding: 0 calc((100% - 1120px) / 2);
+
+        @include mediaQuery("", "desktop-main", max) {
+            padding: 0 20px;
+        }
+    }
+    .navs {
+        float: left;
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            a {
+                font-size: px-to-rem(12px);
+                color: $white;
+                text-decoration: none;
+
+                @include mediaQuery("", "handset", max) {
+                    font-size: px-to-rem(11px);
+                }
+            }
+        }
+
+        @include mediaQuery("", "tablet-small", max) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .copyRightTxts {
+        float: right;
+        p {
+            font-size: px-to-rem(12px);
+            color: $white;
+
+            @include mediaQuery("", "handset", max) {
+                font-size: px-to-rem(11px);
+            }
+        }
+
+        @include mediaQuery("", "tablet-small", max) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+.footerFixed {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+}

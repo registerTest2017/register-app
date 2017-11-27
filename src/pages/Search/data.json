@@ -1,0 +1,145 @@
+[
+    {
+        "ID": 1,
+        "UserName": "test user1",
+        "IDCard": "4400xxx333333",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 2,
+        "UserName": "test user2",
+        "IDCard": "4400xxx65666444",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 3,
+        "UserName": "test user3",
+        "IDCard": "4400xxx65666444",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 1,
+        "PEPCheck": 2,
+        "SanctionCheck": 0
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 2,
+        "ExitingCheck": 1,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 2,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 1,
+        "SanctionCheck": 0
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 2,
+        "PEPCheck": 0,
+        "SanctionCheck": 1
+    },
+    {
+        "ID": 4,
+        "UserName": "test user4",
+        "IDCard": "4400xxx999999",
+        "Gender": 1,
+        "Location": "guangdong guangzhou",
+        "BackListCheck": 1,
+        "ExitingCheck": 0,
+        "PEPCheck": 2,
+        "SanctionCheck": 1
+    }
+]

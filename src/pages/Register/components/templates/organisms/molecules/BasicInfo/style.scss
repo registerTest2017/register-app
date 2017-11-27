@@ -1,0 +1,31 @@
+@import "../../../../styles/Register.scss";
+
+.BasicInfoContainer {
+    padding: 5px;
+    li {
+        z-index: 1;
+        .Rows {
+            .columnsRight {
+                &.minInput {
+                    input {
+                        &.getTwoCode {
+                            width: 110px;
+                            border: none;
+                            color: $pearl;
+                            cursor: pointer;
+                            background: $slate;
+                        }
+                        &.getTwoCode_gray {
+                            width: 110px;
+                            border: none;
+                            outline: none;
+                            color: $pewter;
+                            cursor: default;
+                            background: $silver;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

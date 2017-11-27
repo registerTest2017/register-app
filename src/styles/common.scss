@@ -1,0 +1,90 @@
+@import "reset", "variable", "shared", "font";
+
+html,
+body {
+    overflow: auto;
+    font-family: "Microsoft Yahei";
+    font-size: $font-size-default;
+    color: $font-color-default;
+    background-color: $background-color-default;
+    background-repeat: no-repeat;
+    background-position: center -200px;
+    background-image: url("../images/background.jpg");
+    background-attachment: fixed;
+}
+
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+strike,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    font-family: $font;
+    font-weight: normal;
+    font-size: px-to-rem($font-size-default);
+}
+
+button {
+    @extend %buttonDefault;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input,
+optgroup,
+select,
+textarea {
+    font-family: $font;
+    font-weight: $font-weight-default;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}

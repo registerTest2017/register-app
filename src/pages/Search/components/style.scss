@@ -1,0 +1,159 @@
+@import "../../Register/components/styles/Register";
+
+.searchContext {
+    display: block;
+    padding: 30px;
+    min-height: 500px;
+    background: #fff;
+    & > div {
+        display: block;
+        height: 100%;
+        overflow: auto;
+    }
+}
+
+.searchTable {
+    border-collapse: collapse;
+    td {
+        border: 1px solid #eee;
+        padding: 5px 10px;
+    }
+    thead {
+        background: #f2f9fd;
+        tr {
+            height: 25px;
+            line-height: 25px;
+            td {
+                padding: 0 10px;
+                text-align: center;
+                color: #333;
+                font-weight: 300;
+                font-size: 18px;
+                span {
+                    font-weight: 300;
+                    font-size: 18px;
+                }
+            }
+            .fixLineHeight {
+                display: block;
+                height: 50px;
+                line-height: 50px;
+            }
+            .operation {
+                line-height: 80px;
+            }
+            .twoLineFix {
+                display: block;
+                height: 50px;
+                overflow: hidden;
+                line-height: 20px;
+            }
+        }
+    }
+    tbody {
+        tr td {
+            padding: 10px 6px;
+            text-align: center;
+            span {
+                font-size: 14px;
+            }
+            .button {
+                border: 1px solid #ddd;
+                padding: 8px 12px;
+                margin: 0 2px;
+                outline: none;
+                color: #333;
+                font-size: 14px;
+                text-align: center;
+                background: #eee;
+                a {
+                    display: block;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #999;
+                }
+            }
+            .button:hover {
+                color: #666;
+                background: #fff;
+                a {
+                    color: #666;
+                }
+            }
+            .btnapprove {
+                color: #fff;
+                background: #13842a;
+                a {
+                    color: #fff;
+                }
+            }
+            .btnapprove:hover {
+                color: #fff;
+                background: #55cc7e;
+                a {
+                    color: #fff;
+                }
+            }
+            .btnworning {
+                color: #fff;
+                background: $primary-red;
+                a {
+                    color: #fff;
+                }
+            }
+            .btnworning:hover {
+                color: #fff;
+                background: #ff9a9a;
+                a {
+                    color: #fff;
+                }
+            }
+            .tdStatus {
+                display: block;
+                text-align: center;
+                color: green;
+                font-family: "微软雅黑";
+            }
+            .tdStatusPass::before {
+                content: "√";
+            }
+            .tdStatusFaild::before {
+                color: red;
+                content: "×";
+            }
+            .tdStatusWait::before {
+                color: #4df5c8;
+                content: "о";
+            }
+            .statusApprove,
+            .statusWait {
+                position: relative;
+                display: block;
+                width: 45px;
+                height: 20px;
+                font-size: 14px;
+            }
+            .statusApprove::before {
+                color: #13842a;
+                content: "已通过";
+            }
+            .statusWait::before {
+                color: #999;
+                content: "待操作";
+            }
+            .statusReject::before {
+                color: $primary-red;
+                content: "已拒绝";
+            }
+            .statusDisabled,
+            .statusDisabled:hover,
+            .statusDisabled:active {
+                color: #eee;
+                background: #888;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

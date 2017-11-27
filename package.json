@@ -1,0 +1,173 @@
+{
+  "name": "customer-register-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "better-npm-run lint",
+    "copyStubData": "node node_modules/group-digital-wealth-mockserver/bin/index.js",
+    "test": "better-npm-run jest",
+    "dev": "npm run clear && better-npm-run dev",
+    "clear": "rimraf build",
+    "build": "npm run clear && better-npm-run build",
+    "staging": "better-npm-run staging",
+    "esdoc": "better-npm-run esdoc",
+    "bootstrap": "chmod 777 ./pipeline/scripts/bootstrap.sh && ./pipeline/scripts/bootstrap.sh",
+    "start": "npm run bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@alm-github.systems.uk.hsbc:AO-Quick-Prototype/customer-register-app.git"
+  },
+  "author": "HSBC",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "babel-polyfill": "^6.23.0",
+    "bundle-loader": "^0.5.5",
+    "classnames": "^2.2.5",
+    "esdoc": "^0.5.2",
+    "immutable": "^3.8.1",
+    "intl": "^1.2.5",
+    "js-cookie": "^2.1.4",
+    "json-loader": "^0.5.4",
+    "lodash": "^4.17.4",
+    "node-sass-chokidar": "^0.0.3",
+    "numeral": "^2.0.6",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-intl": "^2.2.3",
+    "react-redux": "^5.0.1",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^5.0.0-alpha.6",
+    "redux": "^3.6.0",
+    "redux-saga": "^0.15.3",
+    "remote-redux-devtools": "^0.5.12",
+    "shortid": "^2.2.6",
+    "socket.io-client": "^2.0.3",
+    "url-parse": "^1.1.9"
+  },
+  "private": true,
+  "publishConfig": {
+    "registry": "http://verdaccio.cf.wgdc-drn-01.cloud.uk.hsbc/"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.6.0",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.20.0",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-tcomb": "^0.3.24",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "better-npm-run": "^0.0.14",
+    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "concurrently": "^3.1.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.28.2",
+    "cssnano": "^3.9.1",
+    "eslint": "^3.12.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.8.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "flow-bin": "^0.37.4",
+    "group-digital-wealth-api-client": "^1.0.0",
+    "group-digital-wealth-error-handling": "^1.0.0",
+    "group-digital-wealth-router": "^1.0.0",
+    "group-digital-wealth-state-binding": "^1.0.0",
+    "group-digital-wealth-validation": "^1.0.0",
+    "gutil": "^1.6.4",
+    "handlebars": "^4.0.8",
+    "handlebars-loader": "^1.5.0",
+    "html-webpack-plugin": "^2.26.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^18.0.0",
+    "ncp": "^2.0.0",
+    "node-sass": "^4.5.2",
+    "postcss-loader": "^2.0.5",
+    "postcss-smart-import": "^0.6.6",
+    "prop-types": "^15.5.8",
+    "react-hot-loader": "^1.3.1",
+    "react-test-renderer": "^15.4.1",
+    "redux-devtools": "^3.4.0",
+    "redux-devtools-chart-monitor": "^1.6.1",
+    "redux-devtools-dock-monitor": "^1.1.2",
+    "redux-devtools-filterable-log-monitor": "^0.6.8",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^6.0.3",
+    "shelljs": "^0.7.8",
+    "string-replace-loader": "^1.2.0",
+    "style-loader": "^0.18.0",
+    "stylelint-config-format": "0.0.1",
+    "stylelint-webpack-plugin": "^0.4.2",
+    "tcomb": "^3.2.16",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-simple-progress-plugin": "^0.0.1",
+    "webpack-visualizer-plugin": "^0.1.11"
+  },
+  "betterScripts": {
+    "lint": {
+      "command": "eslint src & eslint config & eslint webpack & eslint content"
+    },
+    "dev": {
+      "command": "babel-node webpack/watch.js",
+      "env": {
+        "EXEC_ENV": "development",
+        "NODE_ENV": "development",
+        "RUN_TASK": "watch",
+        "DEBUG": "app:*",
+        "UV_THREADPOOL_SIZE": 100,
+        "DEV_SERVER_PORT": 8000,
+        "REACT_DEVTOOLS_PORT": 8097,
+        "REDUX_DEVTOOLS_PORT": 8000
+      }
+    },
+    "staging": {
+      "command": "babel-node webpack/compile.js",
+      "env": {
+        "EXEC_ENV": "staging",
+        "NODE_ENV": "production",
+        "UV_THREADPOOL_SIZE": 100
+      }
+    },
+    "build": {
+      "command": "babel-node webpack/compile.js",
+      "env": {
+        "NODE_ENV": "production",
+        "UV_THREADPOOL_SIZE": 100
+      }
+    },
+    "esdoc": {
+      "command": "esdoc"
+    },
+    "jest": {
+      "command": "jest"
+    }
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/test"
+    ],
+    "coverageDirectory": "<rootDir>/jest",
+    "collectCoverage": true
+  },
+  "engines": {
+    "node": "^6.9.x",
+    "npm": "^4.5.x"
+  }
+}

@@ -1,0 +1,14 @@
+applications:
+- name: smp.ao.register
+  host: smp_ao_register
+  path: ../../customer-register-app
+  memory: 2048M
+  disk_quota: 2048M
+  buildpack: nodejs_buildpack
+  env:
+    GIT_SSL_NO_VERIFY: true
+    HTTP_PROXY: http://uk-server-proxy-01.systems.uk.hsbc
+    HTTPS_PROXY: http://uk-server-proxy-01.systems.uk.hsbc
+    NPM_REGISTRY: http://digital-wealth-starterkit.cf.wgdc-drn-01.cloud.uk.hsbc/
+    no_proxy: alm-github.systems.uk.hsbc,digital-wealth-starterkit.cf.wgdc-drn-01.cloud.uk.hsbc,localhost
+    NODE_ENV: stagging

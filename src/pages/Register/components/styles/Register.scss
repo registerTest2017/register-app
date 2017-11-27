@@ -1,0 +1,676 @@
+@import "../../../../styles/_variable", "../../../../styles/shared";
+
+.registerLayout,
+.registerContainer {
+    display: block;
+    max-width: 1120px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1120px) {
+        width: 100%;
+    }
+
+    @media screen and (min-width: 1120px) {
+        width: 1120px;
+    }
+}
+
+.registerContainer {
+    // position: fixed;
+    top: 0;
+    left: calc((100% - 1120px) / 2);
+    left: -webkit-calc((100% - 1120px) / 2);
+    .HeaderH {
+        height: 10px;
+    }
+}
+
+.registerStepHeader {
+    display: block;
+    height: 75px;
+    background: #fff;
+}
+
+.registerStepHeaderFixed {
+    position: fixed;
+    z-index: 999;
+    top: 34px;
+
+    @media screen and (min-width: 1120px) {
+        left: calc((100% - 1120px) / 2);
+        left: -webkit-calc((100% - 1120px) / 2);
+        width: 1120px;
+    }
+
+    @media screen and (max-width: 1120px) {
+        left: 0;
+        width: 100%;
+    }
+    box-shadow: 0 3px 6px rgba(10, 10, 10, 0.4);
+    transition: top 0.6s ease;
+}
+
+.stepTracker {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+
+    @media screen and (min-width: 1120px) {
+        li {
+            display: inline-block;
+            border-bottom: 4px solid #eee;
+            font-size: 0;
+            span {
+                font-size: 14px;
+                color: #999;
+                i {
+                    font-style: normal;
+                }
+                i::after {
+                    content: "．";
+                }
+                b {
+                    padding-left: 0;
+                    font-weight: normal;
+                }
+            }
+        }
+        .active {
+            border-bottom-color: #d60202;
+            span {
+                color: #333;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1120px) {
+        float: right;
+        li {
+            display: block;
+            float: left;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            span {
+                position: relative;
+                display: block;
+                height: 6px;
+                margin-top: 25px;
+                background: #eee;
+                i {
+                    position: absolute;
+                    right: 0;
+                    top: -9px;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    border: 1px solid #eee;
+                    border-radius: 100%;
+                    line-height: 25px;
+                    text-align: center;
+                    font-style: normal;
+                    background: #fff;
+                }
+                b {
+                    display: none;
+                }
+            }
+        }
+        .active {
+            span {
+                background: #b1caab;
+                i {
+                    color: #fff;
+                    background: #d60202;
+                }
+            }
+        }
+        li:first-child {
+            width: 25px;
+        }
+
+        @media screen and (max-width: 480px) {
+            float: none;
+            li {
+                width: 60px;
+            }
+        }
+    }
+}
+
+.stepTrackerContainer {
+    position: relative;
+    display: block;
+    padding: 10px 20px;
+
+    @media screen and (min-width: 1120px) {
+        h5 {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 1120px) {
+        h5 {
+            display: block;
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 700;
+
+            @media screen and (max-width: 480px) {
+                position: absolute;
+                left: 10px;
+                top: -10px;
+            }
+        }
+    }
+}
+
+.stepPageContainer {
+    display: block;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.stepPageLeftContainer,
+.stepPageRightContainer {
+    display: block;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    > div {
+        position: relative;
+        display: block;
+    }
+}
+
+.stepPageLeftContainer {
+    float: left;
+    width: 69%;
+
+    @include mediaQuery("", "tablet-small", max) {
+        width: 100%;
+    }
+}
+
+.stepPageRightContainer {
+    float: right;
+    width: 30%;
+
+    @include mediaQuery("", "tablet-small", max) {
+        width: 100%;
+    }
+}
+
+.cardContainer {
+    display: block;
+    & > span {
+        display: block;
+        padding: 0 10px;
+        height: 35px;
+        line-height: 35px;
+        color: #fff;
+        background: #999;
+    }
+    .imgCard {
+        display: block;
+        padding: 20px;
+        border: 1px solid #eee;
+        & > img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+
+    @include mediaQuery("", "tablet-small", max) {
+        border: 1px solid #eee;
+        .imgCard {
+            display: inline-block;
+            width: 40%;
+            border: none;
+            box-sizing: border-box;
+            padding: 20px 0 20px 20px;
+        }
+    }
+}
+
+.cardRewards {
+    display: block;
+    padding: 20px;
+    font-size: 12px;
+
+    @include mediaQuery("", "tablet-small", max) {
+        display: inline-block;
+        width: 60%;
+        box-sizing: border-box;
+        padding-top: 30px;
+        vertical-align: top;
+        font-size: 10px;
+    }
+
+    @include mediaQuery("", "handset", max) {
+        padding-top: 20px;
+    }
+    li {
+        display: block;
+        line-height: 25px;
+        color: #999;
+        span {
+            padding-left: 4px;
+        }
+    }
+}
+
+.stepHeader {
+    display: block;
+    padding: 0 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    height: 30px;
+    line-height: 30px;
+    & > span {
+        display: block;
+        padding-left: 8px;
+        border-left: 4px solid #d60202;
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+    }
+}
+
+// registry share Style
+.RegisterInfoContainer {
+    width: 100%;
+    li {
+        position: relative;
+        .errorTips {
+            position: absolute;
+            left: 38%;
+            top: 46px;
+            display: none;
+            p {
+                color: $emerald;
+                font-size: px-to-rem(14px);
+                font-weight: bold;
+            }
+        }
+        padding: 12px 0;
+        .Rows {
+            width: 100%;
+            .columns {
+                display: inline-block;
+                width: 100%;
+                .input,
+                .dropdownContainer {
+                    width: 63.5%;
+                    display: inline-block;
+                    border-color: #ccc;
+                }
+                &.oneCols {
+                    width: 100%;
+                }
+                &.TwoCols {
+                    width: 100%;
+                    .label {
+                        width: 40px;
+                        display: inline-block;
+                        text-align: right;
+                        i {
+                            margin-right: 6px;
+                            color: red;
+                        }
+
+                        @include mediaQuery("", "handset", max) {
+                            text-align: left;
+                        }
+                    }
+                    .input,
+                    .dropdownContainer {
+                        width: 27.5%;
+                        display: inline-block;
+
+                        @include mediaQuery("", "handset", max) {
+                            width: 40%;
+                        }
+                        .dropdownBox {
+                            z-index: 1;
+                            .dropdownBoxItemList {
+                                z-index: 10;
+                            }
+                        }
+                    }
+                }
+
+                .columnsLeft {
+                    width: 38%;
+                    display: inline-block;
+                    line-height: 32px;
+                    text-align: right;
+
+                    @include mediaQuery("", "handset", max) {
+                        width: 100%;
+                        display: block;
+                        text-align: left;
+                    }
+                    label {
+                        margin-right: 15px;
+                        color: $graphite;
+                        i {
+                            color: red;
+                        }
+                    }
+                }
+                .columnsRight {
+                    width: 62%;
+                    display: inline-block;
+                    text-align: left;
+                    vertical-align: top;
+
+                    .inlineBlock {
+                        display: inline-block;
+
+                        @include mediaQuery("", "handset", max) {
+                            display: block;
+                        }
+                    }
+                    .bLine {
+                        position: relative;
+                        display: inline-block;
+                        margin: 0px 5px;
+                        line-height: 31px;
+                        &::before {
+                            position: absolute;
+                            left: -1px;
+                            top: 15px;
+                            display: block;
+                            width: 5px;
+                            height: 2px;
+                            content: "";
+                            background-color: #333;
+                        }
+                    }
+
+                    @include mediaQuery("", "handset", max) {
+                        width: 100%;
+                        display: block;
+                    }
+                    .rightErrorTips {
+                        position: relative;
+                        display: block;
+                        font-size: 12px;
+                        color: $emerald;
+                        span,
+                        a {
+                            font-size: 12px;
+                        }
+                    }
+                    .emailTips {
+                        padding: 5px 0;
+                        line-height: 20px;
+                        font-size: 10px;
+                        color: #333;
+                        a {
+                            display: inline-block;
+                            font-size: 0.9rem;
+                            color: blue;
+                        }
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                    .twoDropdown {
+                        display: inline-block;
+                        margin-right: 20px;
+                    }
+                    &.minInput {
+                        input {
+                            width: 37%;
+                        }
+                    }
+                    .yesNoButton {
+                        label {
+                            margin-right: 30px;
+                        }
+                    }
+                    .radioButtonLabel {
+                        span {
+                            color: #666;
+                            font-size: px-to-rem(14px);
+                        }
+                        .customRadioButton {
+                            float: left;
+                            width: 17px;
+                            height: 17px;
+                            border-color: #666;
+                            margin: 4px 10px 0 0;
+                            span {
+                                margin: 4px;
+                                width: 9px;
+                                height: 9px;
+                                min-width: 9px;
+                                min-height: 9px;
+                            }
+                            input[type="radio"] {
+                                &:checked {
+                                    + .radioChecked {
+                                        background-color: #666;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .getTwoCode {
+                        width: 100px;
+                        padding: 0 5px;
+                        margin-left: 10px;
+                        display: inline-block;
+                        border-radius: 2px;
+                        height: 32px;
+                        line-height: 32px;
+                        text-align: center;
+                        background: #ccc;
+                    }
+                    .getPicCode {
+                        width: 100px;
+                        padding: 0 5px;
+                        margin-left: 10px;
+                        display: inline-block;
+                        border-radius: 2px;
+                        height: 32px;
+                        line-height: 32px;
+                        text-align: center;
+                        img {
+                            width: 100%;
+                            height: 32px;
+                            margin-top: -1px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // input START********
+    .input {
+        padding: 5px 10px;
+    }
+    // input END********
+
+    // dropdown START********
+    .twoDropdown {
+        .dropdownContainer {
+            .dropdownBox {
+                min-width: 135px;
+            }
+        }
+    }
+    .dropdownContainer {
+        .dropdownBox {
+            z-index: 100;
+            width: 100%;
+            min-width: 126px;
+            box-sizing: border-box;
+            border-color: #ccc;
+            background-color: $white;
+
+            &.opened {
+                .dropdownBoxDisplayValue {
+                    &::after {
+                        content: "\F056";
+                    }
+                }
+            }
+
+            .dropdownBoxDisplayValue {
+                padding: 8px 10px;
+                padding-right: 30px;
+                font-size: px-to-rem(14px);
+                color: $font-color-default;
+
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -10px;
+                    border: none;
+                    display: inline-block;
+                    width: 30px;
+                    height: 20px;
+                    font-size: px-to-rem(16px);
+                    font-family: "HSBCIcon-Font";
+                    font-smoothing: antialiased;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 20px;
+                    text-align: center;
+                    vertical-align: middle;
+                    content: "\F055";
+                    background-color: transparent;
+                    speak: none;
+                    text-rendering: auto;
+                }
+            }
+
+            .dropdownBoxItemList {
+                left: 0;
+                right: 0;
+            }
+
+            .dropdownBoxItem {
+                width: auto;
+                padding: 8px 16px;
+                font-size: px-to-rem(16px);
+                color: $font-color-default;
+                background-color: $white;
+            }
+            .dropdownBoxItem:hover {
+                background-color: #e2e2e2;
+            }
+            .dropdownBoxItem.selected {
+                color: $black;
+                background-color: #e2e2e2;
+            }
+            .dropdownBoxItem.selected:hover {
+                background-color: #e2e2e2;
+            }
+
+        }
+    }
+    // dropdown END********
+
+    .subscribeConfirm {
+        margin-top: 30px;
+        padding-left: 37.8%;
+
+        @include mediaQuery("", "handset", max) {
+            padding-left: 0;
+        }
+
+        @extend %customCheckbox;
+
+        .checkboxLabel {
+            .labelText {
+                font-size: px-to-rem(12px);
+                font-weight: normal;
+                line-height: 28px;
+                a {
+                    font-size: px-to-rem(12px);
+                }
+            }
+            .customCheckbox {
+                border-color: #ccc;
+            }
+        }
+    }
+    //custom checkbox
+    .subscribeConfirm {
+        .checkboxLabel {
+            position: relative;
+            display: block;
+            padding-left: 30px;
+
+            @include mediaQuery("", "handset", max) {
+                padding-left: 30px;
+            }
+
+            .customCheckbox {
+                position: absolute;
+                left: 2px;
+                top: 3px;
+                width: 12px;
+                height: 12px;
+                border: 1px solid $silver;
+                background: $white;
+
+                @include mediaQuery("", "handset", max) {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .icon {
+                margin-left: 0px;
+                margin-top: 0px;
+                color: $graphite;
+                font-size: px-to-rem(18px);
+                font-weight: normal;
+
+                @include mediaQuery("", "handset", max) {
+                    margin-left: 0px;
+                    margin-top: 0px;
+                    font-size: px-to-rem(18px);
+                }
+            }
+
+            .labelText {
+                font-size: px-to-rem(14px);
+                font-weight: 100;
+                color: $graphite;
+            }
+        }
+    }
+}
+
+.serviceFunctionNote {
+    padding: 10px 40px;
+
+    @include mediaQuery("", "handset", max) {
+        padding: 10px 5px;
+    }
+
+    & > h5 {
+        display: block;
+        margin: 8px 0;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    & > div {
+        display: block;
+        font-size: 12px;
+        line-height: 20px;
+        p,
+        p strong {
+            font-size: 12px;
+        }
+    }
+}

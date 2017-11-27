@@ -1,0 +1,49 @@
+/* Global RGB Code */
+$primary-red: #db0011;
+$dark-red: #83000a;
+$white: #fff;
+$pearl: #ededed;
+$silver: #d7d8d6;
+$pewter: #929292;
+$pewter-white-20: #a7a7a7;
+$graphite: #404040;
+$graphite-white-15: #5c5c5c;
+$graphite-black-20: #333;
+$black: #000;
+$light-slate: #4d6474;
+$slate: #3e505d;
+$dark-slate: #253038;
+$dark-slate-black-20: #1d262c;
+$jade: #008580;
+$dark-jade: #005e59;
+$gold: #e9a115;
+$antique-gold: #ba8111;
+$violet: #4e3a7c;
+$premier-indigo: #262362;
+$sapphire: #376798;
+$dark-sapphire: #003466;
+$emerald: #3b7522;
+$dark-emerald: #1b3e02;
+$pink-white-10: #f9f2f3;
+
+/* Default  color */
+$font-color-default: $graphite-black-20;
+$background-color-default: $graphite-black-20;
+
+/* font-size */
+$font-size-default: 14px;
+$font-weight-default: 300;
+
+/* font-family */
+$font: "UniversNextforHSBCW02", sans-serif; // You can update the font-family in here
+
+// Media query breakpoints map key, you can update the below default value
+$breakpoints: (
+    "handset": 600px, // Small handset devices (phones, less than 768px)
+    "tablet-small": 768px, // Small tablet devices (tablets, 768px and up)
+    "tablet-large": 960px, // Large tablet devices (desktops, 960px and up)
+    "desktop-small":  1024px, // Medium devices (Small desktops, 1024px and up)
+    "desktop-main":  1120px,
+    "desktop-medium": 1366px, // Large devices (large desktops, 1366px and up)
+    "desktop-large": 1600px // Large devices (large desktops, 1600px and up)
+);

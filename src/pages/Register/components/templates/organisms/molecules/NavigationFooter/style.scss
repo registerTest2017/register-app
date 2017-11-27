@@ -1,0 +1,29 @@
+@import "../../../../../../../styles/_variable", "../../../../../../../styles/shared";
+
+.stepButton {
+    width: 320px;
+    margin: 20px auto;
+    overflow: hidden;
+
+    @include mediaQuery("", "handset", max) {
+        width: 240px;
+    }
+    .btnPrevStep {
+        float: left;
+        border: 1px solid #bbb;
+        color: #222;
+        background: #ddd;
+    }
+    .btnNextStep {
+        float: right;
+    }
+    .btnPrevStep,
+    .btnNextStep {
+        width: 130px;
+
+        @include mediaQuery("", "handset", max) {
+            width: 100px;
+            padding: 10px 20px;
+        }
+    }
+}
